@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="9" time="1.938" timestamp="2025-07-08T23:29:30.288357" hostname="mac.lan"><testcase classname="tests.test_data_dim_reducer" name="test_dimensionality_reducer" time="0.001"><failure message="AttributeError: 'NoneType' object has no attribute 'shape'">mock_df =      col1   col2   col3
+id                     
+0  -1.225 -1.175 -1.019
+1   0.000 -0.100 -0.340
+2   1.225  1.257  1.359
+
+    def test_dimensionality_reducer(mock_df: pd.DataFrame):
+        dim_reducer = DimensionalityReducer("PCA", mock_df)
+        transformed_data = dim_reducer.transform()
+&gt;       assert transformed_data.shape == (mock_df.shape[0], 2)
+E       AttributeError: 'NoneType' object has no attribute 'shape'
+
+tests/test_data_dim_reducer.py:21: AttributeError</failure></testcase><testcase classname="tests.test_data_loader" name="test_data_loader_initialization" time="0.001" /><testcase classname="tests.test_data_loader" name="test_remove_duplicates" time="0.002" /><testcase classname="tests.test_data_loader" name="test_remove_nonfeature_cols" time="0.001" /><testcase classname="tests.test_data_loader" name="test_handle_nan_values" time="0.001" /><testcase classname="tests.test_data_loader" name="test_scale_features" time="0.002" /><testcase classname="tests.test_data_loader" name="test_preprocess_data" time="0.594" /><testcase classname="tests.test_data_loader" name="test_download_data" time="0.630" /><testcase classname="tests.test_version" name="test_version" time="0.000" /></testsuite></testsuites>
